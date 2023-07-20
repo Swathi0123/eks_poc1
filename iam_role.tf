@@ -1,6 +1,7 @@
 resource "aws_iam_role" "master781" {
   name = "ed-eks-master781"
 
+
   assume_role_policy = <<POLICY
 {
   "Version": "2012-10-17",
