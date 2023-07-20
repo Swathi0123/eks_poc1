@@ -11,6 +11,7 @@ resource "aws_instance" "kubectl-server" {
     Name = "kubectl"
   }
 
+
 }
 
 resource "aws_eks_node_group" "node-grp" {
