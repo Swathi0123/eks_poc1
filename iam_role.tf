@@ -112,7 +112,7 @@ resource "aws_iam_role_policy_attachment" "autoscaler781" {
 
 resource "aws_iam_instance_profile" "worker781" {
   depends_on = [aws_iam_role.worker781]
-  name       = "ed-eks-worker-new-profile"
+  name       = "ed-eks-worker-new-profile1"
   role       = aws_iam_role.worker781.name
 }
 
