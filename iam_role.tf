@@ -37,7 +37,6 @@ resource "aws_iam_role_policy_attachment" "AmazonEKSVPCResourceController" {
 
 resource "aws_iam_role" "worker781" {
   name = "ed-eks-worker781"
-  role = aws_iam_role.master781.name
 
   assume_role_policy = <<POLICY
 {
