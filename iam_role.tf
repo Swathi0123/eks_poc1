@@ -20,27 +20,24 @@ POLICY
 
 resource "aws_iam_role_policy_attachment" "AmazonEKSClusterPolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
-
   role       = aws_iam_role.master781.name
 
 }
 
 resource "aws_iam_role_policy_attachment" "AmazonEKSServicePolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSServicePolicy"
-
   role       = aws_iam_role.master781.name
 }
 
 resource "aws_iam_role_policy_attachment" "AmazonEKSVPCResourceController" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
-
   role       = aws_iam_role.master781.name
 }
 
 
 resource "aws_iam_role" "worker781" {
   name = "ed-eks-worker781"
-role       = aws_iam_role.master781.name
+  role       = aws_iam_role.master781.name
 
   assume_role_policy = <<POLICY
 {
@@ -90,7 +87,6 @@ resource "aws_iam_role_policy_attachment" "AmazonEKSWorkerNodePolicy" {
 
 resource "aws_iam_role_policy_attachment" "AmazonEKS_CNI_Policy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
-
   role       = aws_iam_role.worker781.name
 
 }
